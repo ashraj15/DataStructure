@@ -75,6 +75,7 @@ public class DoublyLinkedList {
 				new_node.prev = curr_node.prev;
 				new_node.next = curr_node.prev.next;
 				curr_node.prev.next = new_node;
+				curr_node.prev = new_node;
 				break;
 			}
 			
@@ -83,7 +84,36 @@ public class DoublyLinkedList {
 		
 	}
 	
+public static DoublyLinkedList remove(DoublyLinkedList dl , int n) {
+	Node curr_node = dl.head;
+	if(dl.head == null) {
+		System.out.println("DoublyLinkedList is empty");
+		return dl;
+	}
+	if(dl.head != null && n == 0) {
+		dl.head = dl.head.next;
+		dl.head.prev = null;
+		return dl;
+	}
+	int count = 0;
+	while(curr_node != null) {
+		if( count != n) {
+			curr_node = curr_node.next;
+			if(curr_node == null) {
+				System.out.println("Index out of bound");
+				return dl;
+			}
+			count++;
+		}else {
+			curr_node.prev.next = curr_node.next;
+			curr_node.next.prev = curr_node.prev;
+			curr_node = null;
+			break;
+		}
+	}
+	return dl;
 	
+}	
 	
 	public static DoublyLinkedList display(DoublyLinkedList dl) {
 		
@@ -111,7 +141,11 @@ public class DoublyLinkedList {
 		insert(dl,0,5);
 		insert(dl,3,8);
 		insert(dl,5,18);
-		insert(dl,7,18);
+		remove(dl,0);
+		display(dl);
+		remove(dl,3);
+		display(dl);
+		remove(dl,5);
 		display(dl);
 
 	}
