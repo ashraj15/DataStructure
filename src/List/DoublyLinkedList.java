@@ -83,22 +83,31 @@ public class DoublyLinkedList {
 		return dl;
 		
 	}
-	
+
+// to remove node at position n	
 public static DoublyLinkedList remove(DoublyLinkedList dl , int n) {
 	Node curr_node = dl.head;
+	
+// if head is empty	
 	if(dl.head == null) {
 		System.out.println("DoublyLinkedList is empty");
 		return dl;
 	}
+
+// if head is not empty and n == 0	
 	if(dl.head != null && n == 0) {
 		dl.head = dl.head.next;
 		dl.head.prev = null;
 		return dl;
 	}
+	
+// to remove node at any arbitrary position n	
 	int count = 0;
 	while(curr_node != null) {
 		if( count != n) {
 			curr_node = curr_node.next;
+
+// if index n is out of bound			
 			if(curr_node == null) {
 				System.out.println("Index out of bound");
 				return dl;
@@ -114,7 +123,48 @@ public static DoublyLinkedList remove(DoublyLinkedList dl , int n) {
 	return dl;
 	
 }	
+
+// to remove node by key
+public static DoublyLinkedList removeBykey(DoublyLinkedList dl, int v) {
 	
+	Node curr_node = dl.head;
+
+// if head is empty	
+	if(dl.head == null) {
+		System.out.println("DoublyLinkedList is empty");
+		return dl;
+	}
+	
+//if head is not empty and key is at head	
+	if(dl.head != null && dl.head.data == v) {
+		dl.head = dl.head.next;
+		dl.head.prev = null;
+		return dl;
+	}
+
+// if key is not at head
+	while(curr_node != null) {
+		if(curr_node.data != v) {
+			curr_node =curr_node.next;
+
+// if key is not found 			
+			if(curr_node == null) {
+				System.out.println("node not found");
+				return dl;
+			}
+		}else {
+			curr_node.prev.next = curr_node.next;
+			if(curr_node.next != null)
+			curr_node.next.prev = curr_node.prev;
+			curr_node = null;
+			break;
+		}
+	}
+	return dl;
+	
+}
+
+// to display all nodes
 	public static DoublyLinkedList display(DoublyLinkedList dl) {
 		
 		Node curr_node = dl.head;
@@ -147,6 +197,10 @@ public static DoublyLinkedList remove(DoublyLinkedList dl , int n) {
 		display(dl);
 		remove(dl,5);
 		display(dl);
+		System.out.println();
+		removeBykey(dl,18);
+		display(dl);
+		removeBykey(dl,183);
 
 	}
 
