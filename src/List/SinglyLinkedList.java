@@ -161,6 +161,8 @@ public class SinglyLinkedList {
 	public static void display(SinglyLinkedList list) {
 		
 		Node curr_node = list.head;
+		if(curr_node == null)
+			System.out.println("No elements in SinglyLinkedList");
 		while(curr_node != null) {
 			System.out.println(curr_node.data);
 			curr_node = curr_node.next;
@@ -177,6 +179,7 @@ public class SinglyLinkedList {
 	public static void main(String [] args) {
 		SinglyLinkedList ll = new SinglyLinkedList();
 		
+		 display(ll);
 		 insert(ll,0,0);
 		 add(ll, 1);
 		 add(ll, 2);
