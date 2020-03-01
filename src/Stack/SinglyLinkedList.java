@@ -41,7 +41,9 @@ public class SinglyLinkedList {
 			System.out.println("Stack UnderFlow");
 			return false;
 		}
-		head = head.next;
+		Node curr_node = head;
+		head = curr_node.next;
+		curr_node = null;
 		return false;
 	}
 	
