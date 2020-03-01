@@ -198,5 +198,7 @@ public class SinglyLinkedList {
 		 removeBykey(ll,9);
 		// remove(ll,0);
 		display(ll);
+		remove(ll,6);
+		display(ll);
 	}
 }
