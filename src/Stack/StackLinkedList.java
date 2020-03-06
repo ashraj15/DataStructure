@@ -50,7 +50,7 @@ public class StackLinkedList<T> implements Iterable<T>{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		StackLinkedList ss = new StackLinkedList();
+		StackLinkedList<Integer> ss = new StackLinkedList<Integer>();
 		ss.push(12);
 		ss.push(11);
 		ss.push(34);

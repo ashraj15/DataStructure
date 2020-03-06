@@ -1,15 +1,19 @@
 package Stack;
 
-public class Array {
+
+import java.util.*;
+public class StackUsingArray {
 	
 	
-	final int MAX = 3;
+	int MAX ;
 	int top;
-	int [] arr = new int[MAX];
+	int [] arr ;
 	
 	
-	Array() {
+	StackUsingArray(int max) {
+		MAX = max;
 		top = -1;
+		arr = new int[this.MAX];
 	}
 	
 	public boolean isEmpty()
@@ -54,7 +58,10 @@ public class Array {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Array a = new Array();
+		StackUsingArray a = new StackUsingArray(3);
+		
+		Queue<Integer> q = new LinkedList<Integer>();
+		
 		a.push(3);
 		a.push(7);
 		a.push(6);
