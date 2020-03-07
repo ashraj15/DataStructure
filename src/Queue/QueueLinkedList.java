@@ -28,25 +28,25 @@ public class QueueLinkedList<T> implements Iterable<T> {
 	
 	T dequeue() {
 		if(isEmpty())
-			throw new java.util.EmptyStackException();
+			throw new java.util.NoSuchElementException();
 		return ll.removeFirst();
 	}
 	
 	T front() {
 		if(isEmpty())
-			throw new java.util.EmptyStackException();
+			throw new java.util.NoSuchElementException();
 		return ll.peekFirst();
 	}
 	
 	T rear() {
 		if(isEmpty())
-			throw new java.util.EmptyStackException();
+			throw new java.util.NoSuchElementException();
 		return ll.peekLast();
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		QueueLinkedList ql = new QueueLinkedList();
+		QueueLinkedList<Integer> ql = new QueueLinkedList<Integer>();
 		
 		ql.enqueue(23);
 		ql.enqueue(43);

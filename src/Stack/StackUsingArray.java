@@ -62,6 +62,8 @@ public class StackUsingArray {
 		
 		Queue<Integer> q = new LinkedList<Integer>();
 		
+		q.remove();
+		
 		a.push(3);
 		a.push(7);
 		a.push(6);

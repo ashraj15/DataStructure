@@ -60,14 +60,14 @@ public class QueueUsingArray {
 		// TODO Auto-generated method stub
 		
 		QueueUsingArray q = new QueueUsingArray(3);
-		q.enqueue(4);
-		q.enqueue(42);
-		q.enqueue(33);
-		q.enqueue(21);
-		System.out.println(q.size);
+		q.enqueue(12);
+		q.enqueue(15);
+		q.enqueue(10);
+		//q.enqueue(21);
+		//System.out.println(q.size);
 		System.out.println(q.front()+" "+q.rear());
 		System.out.println(q.dequeue());
-		System.out.println(q.dequeue());
+		System.out.println(q.front()+" "+q.rear());
 		System.out.println(q.dequeue());
 		System.out.println(q.dequeue());
 
